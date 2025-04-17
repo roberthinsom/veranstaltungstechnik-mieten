@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AE Rental: Professionelle Eventtechnik</title>
+    <style>
+        :root {
+            --primary: #2a4365;
+            --secondary: #f6ad55;
+            --accent: #ecc94b;
+            --light: #f7fafc;
+            --dark: #1a202c;
+            --text: #4a5568;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), #1e3a8a);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: var(--light);
+            transform: skewY(-3deg);
+            z-index: 1;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .intro {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            font-size: 1.2rem;
+        }
+        
+        section {
+            padding: 60px 0;
+            position: relative;
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 15px auto;
+        }
+        
+        .highlight-box {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature-item {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-item h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-card ul {
+            padding-left: 20px;
+        }
+        
+        .service-card li {
+            margin-bottom: 10px;
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial::before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(246, 173, 85, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial .author {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary), #1e3a8a);
+            color: white;
+            padding: 80px 0;
+            border-radius: 10px;
+            margin: 60px 0;
+        }
+        
+        .cta h2 {
+            color: white;
+        }
+        
+        .cta h2::after {
+            background: var(--accent);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        .highlight {
+            color: var(--secondary);
+            font-weight: bold;
+        }
+        
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>AE Rental: Eventtechnik, die Ihr Event unvergesslich macht!</h1>
+            <p class="intro">Ein gelungenes Event lebt von Emotionen, Atmosphäre und bleibenden Eindrücken. Doch hinter jedem unvergesslichen Moment steckt hochwertige Technik – sei es bei Konzerten, Messen, Hochzeiten oder Firmenevents. <a href="https://ae-rental.de/" style="color: var(--accent); font-weight: bold; text-decoration: none;">AE Rental</a> setzt genau hier an und bietet professionelle Veranstaltungstechnik mieten, die Ihre Veranstaltung auf das nächste Level hebt.</p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2>Was AE Rental auszeichnet</h2>
+            <div class="highlight-box">
+                <p>AE Rental ist nicht nur ein weiterer Anbieter von Veranstaltungstechnik – das Unternehmen überzeugt durch:</p>
+                
+                <div class="features">
+                    <div class="feature-item">
+                        <h3>Hochmoderne Technik</h3>
+                        <p>Von LED-Wänden bis zu professionellen Licht- und Tonanlagen - wir arbeiten nur mit Top-Geräten.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Maßgeschneiderte Lösungen</h3>
+                        <p>Individuelle Beratung für jedes Event - wir finden die perfekte Technik für Ihre Anforderungen.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Erfahrene Techniker</h3>
+                        <p>Kompetente Unterstützung vor, während und nach der Veranstaltung durch unser Expertenteam.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Zuverlässigkeit & Flexibilität</h3>
+                        <p>Bundesweiter Service mit Rundum-Sorglos-Paket - wir kümmern uns um alles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #f8fafc;">
+        <div class="container">
+            <h2>Unsere Top-Leistungen im Detail</h2>
+            
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Professionelle Audiotechnik</h3>
+                        <p>Ein Event ohne klaren Sound ist wie ein Konzert ohne Musik. AE Rental bietet:</p>
+                        <ul>
+                            <li>Hochwertige PA-Anlagen von Marken wie L-Acoustics, d&b audiotechnik</li>
+                            <li>Mikrofone (Drahtlos, Headset, Handheld) für Moderationen und Bühnenauftritte</li>
+                            <li>Mischpulte und Sound-Engineering für optimale Akustik</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Atemberaubende Lichttechnik</h3>
+                        <p>Licht schafft Stimmung – ob sanftes Ambiente oder spektakuläre Shows:</p>
+                        <ul>
+                            <li>Moving Heads, LED-Pars, Laser & Hazer für dynamische Effekte</li>
+                            <li>DMX-Steuerung für präzise Lichtchoreografien</li>
+                            <li>Individuelle Lichtkonzepte für Hochzeiten, Konzerte und mehr</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Videotechnik & LED-Walls</h3>
+                        <p>Großflächige Bildwelten ziehen alle Blicke auf sich:</p>
+                        <ul>
+                            <li>Hochauflösende LED-Wände (Indoor & Outdoor)</li>
+                            <li>Livestreaming & Aufzeichnung für hybride Events</li>
+                            <li>Projektoren & Mediensteuerung für Präsentationen</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Bühnenbau & Dekorationen</h3>
+                        <p>Eine professionelle Bühne setzt Ihr Event in Szene:</p>
+                        <ul>
+                            <li>Modularer Bühnenaufbau in verschiedenen Größen</li>
+                            <li>Tribünen, Podeste & Backstage-Lösungen</li>
+                            <li>Thematische Dekorationen für ein stimmiges Gesamtbild</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Für wen eignet sich AE Rental?</h2>
+            <p style="text-align: center; margin-bottom: 30px; font-size: 1.2rem;">Ob privat oder geschäftlich – unsere Technik begeistert bei:</p>
+            
+            <div class="features" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <div class="feature-item" style="text-align: center;">
+                    <span class="emoji">🎤</span>
+                    <h3>Konzerte & Festivals</h3>
+                </div>
+                <div class="feature-item" style="text-align: center;">
+                    <span class="emoji">💍</span>
+                    <h3>Hochzeiten & Galas</h3>
+                </div>
+                <div class="feature-item" style="text-align: center;">
+                    <span class="emoji">🏢</span>
+                    <h3>Messen & Firmenevents</h3>
+                </div>
+                <div class="feature-item" style="text-align: center;">
+                    <span class="emoji">🎭</span>
+                    <h3>Theater & Live-Performances</h3>
+                </div>
+                <div class="feature-item" style="text-align: center;">
+                    <span class="emoji">📢</span>
+                    <h3>Stadtfeste & öffentliche Veranstaltungen</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: #f8fafc;">
+        <div class="container">
+            <h2>Kundenerfahrungen</h2>
+            <p style="text-align: center; margin-bottom: 40px;">Das sagen unsere Kunden</p>
+            
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>AE Rental hat unsere Firmenfeier mit atemberaubender Lichttechnik und kristallklarem Sound zu einem Highlight gemacht – absolut empfehlenswert!</p>
+                    <p class="author">Markus B., Eventmanager</p>
+                </div>
+                <div class="testimonial">
+                    <p>Die LED-Wand war der Hingucker unserer Hochzeit – die Gäste waren begeistert!</p>
+                    <p class="author">Sarah & Tom, Brautpaar</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="cta">
+            <h2>Ihr Event verdient die beste Technik</h2>
+            <p style="max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem;">Sie planen eine Veranstaltung und möchten mit professioneller Technik überzeugen? AE Rental steht Ihnen mit Expertise und Leidenschaft zur Seite.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📞</span>
+                    <span>Kontaktieren Sie uns jetzt für ein unverbindliches Angebot!</span>
+                </div>
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>info@ae-rental.de</span>
+                </div>
+                <div class="contact-item">
+                    <span>🌐</span>
+                    <span>www.ae-rental.de</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section>
+        <div class="container" style="text-align: center;">
+            <h2>Mit AE Rental wird Ihr Event zum unvergesslichen Erlebnis!</h2>
+            <p style="max-width: 800px; margin: 0 auto; font-size: 1.2rem;">Moderne Technik, maßgeschneiderte Lösungen und ein engagiertes Team – das ist AE Rental. Verwandeln Sie Ihre Veranstaltung in ein einzigartiges Erlebnis und setzen Sie auf Profis, die wissen, wie man Events unvergesslich macht!</p>
+        </div>
+    </section>
+</body>
+</html>
